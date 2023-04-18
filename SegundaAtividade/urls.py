@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from SegundaAtividade.views import cliente
+from SegundaAtividade.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clientes', cliente.home, name="cliente.home"),
     path('clientes/insert', cliente.insert, name="cliente.insert"),
-    path('clientes/edit/<id>', cliente.edit, name="cliente.edit"),
+    path('clientes/edit/<id>\<nome>', cliente.edit, name="cliente.edit"),
     path('clientes/delete/<id>', cliente.delete, name="cliente.delete"),
+    path('', home.home, name="home")
 ]

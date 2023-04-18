@@ -5,8 +5,24 @@
         <title>SegundaAtividade</title>
     </head>
     <body>
-        {% block 'header' %}
-        {% endblock %}
+        <nav class="navbar bg-primary shadow mb-3 navbar-expand-lg">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1" style="color: white;">{% block 'header' %}Home{% endblock %}</span>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'home' %}  style="color: white">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'cliente.home'%}  style="color: white">Clientes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+        
+        
         <div class="container">
             {% block 'conteudo' %}
             {% endblock %}
