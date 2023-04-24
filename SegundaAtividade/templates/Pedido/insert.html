@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+
+{% block 'header' %}
+Adicionar pedido
+{% endblock %}
+{% block 'conteudo' %}
+
+<form method="POST" class="form container row g-3">
+    {% csrf_token %}
+    {% render_field form.id %}
+
+
+    <div class="col-md-4">
+        <p class="align-middle">Data Pedido:</p>
+        {% render_field form.dataPedido class="form-control" type="date" %}
+    </div>
+
+    <div class="col-md-4">
+        <p class="align-middle">Data Prevista Entrega:</p>
+        {% render_field form.dataEntregaPrevista class="form-control" type="date" %}
+    </div>  
+
+    <div class="col-md-4">
+        <p class="align-middle">Data Entregue:</p>
+        {% render_field form.dataEntregaReal class="form-control" type="date" %}
+    </div>
+
+    <div class="col-md-6">
+        <p class="align-middle">Status:</p>
+        {% render_field form.status class="form-control" %}
+    </div>
+
+    <div class="col-md-6">
+        <p class="align-middle">Valor Total:</p>
+        {% render_field form.valor class="form-control" %}
+    </div> 
+
+    <div class="col-1">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="col-1">
+        <p></p>
+        <a href={% url 'pedido.home' %} class="btn btn-primary">Voltar</a>
+    </div>
+
+
+
+
+</form>
+
+{% endblock %}
