@@ -12,7 +12,6 @@ class Produto(models.Model):
     preco =  models.DecimalField(decimal_places=2, max_digits=32)
     estoque = models.IntegerField()
     descricao = models.CharField(max_length=2500)
-    imagem = models.BinaryField(max_length=5000)
    
 class Pedido(models.Model):
     dataPedido = models.DateField()
@@ -24,3 +23,9 @@ class Pedido(models.Model):
 class Categoria(models.Model):
     nome = models.CharField(max_length=30)
     descricao = models.CharField(max_length=1000)
+    
+class Fornecedor(models.Model):
+    nome = models.CharField(max_length=30)
+    endereco = models.CharField(max_length=500)
+    email = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=20)

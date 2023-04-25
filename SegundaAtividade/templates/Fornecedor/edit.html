@@ -9,25 +9,25 @@ Editar {{nome}}
 <form method="POST" class="form container row g-3">
     {% csrf_token %}
     {% render_field form.id %}
-    <div class="col-sm-6">
+    <div class="col-md-6">
         <p class="align-middle">Nome:</p>
         {% render_field form.nome class="form-control" %}
     </div>
 
-    <div class="col-sm-3">
-        <p class="align-middle">Preço:</p>
-        {% render_field form.preco class="form-control" %}
+    <div class="col-md-6">
+        <p class="align-middle">Endereço:</p>
+        {% render_field form.endereco class="form-control" %}
     </div>
 
-    <div class="col-sm-3">
-        <p class="align-middle" style="margin-bottom:">Estoque:</p>
-        {% render_field form.estoque class="form-control" %}
+    <div class="col-md-6">
+        <p class="align-middle" style="margin-bottom:">E-mail:</p>
+        {% render_field form.email class="form-control" %}
     </div>  
 
-    <div class="col-xg-12">
-        <p class="align-middle">Descrição:</p>
-        {% render_field form.descricao class="form-control" %}
-    </div> 
+    <div class="col-md-6">
+        <p class="align-middle">Telefone:</p>
+        {% render_field form.telefone class="form-control" %}
+    </div>
 
     <div class="col-1">
         <p></p>
@@ -35,7 +35,7 @@ Editar {{nome}}
     </div>
     <div class="col-1">
         <p></p>
-        <a href={% url 'produto.home' %} class="btn btn-primary">Voltar</a>
+        <a href={% url 'fornecedor.home' %} class="btn btn-primary">Voltar</a>
     </div>
 
 

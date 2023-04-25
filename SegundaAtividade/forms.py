@@ -20,3 +20,8 @@ class CategoriaForm(ModelForm):
     class Meta:
         model = Categoria
         fields = '__all__'
+        
+class FornecedorForm(ModelForm):
+    class Meta:
+        model = Fornecedor
+        fields = '__all__'
