@@ -43,6 +43,34 @@ urlpatterns = [
     path('fornecedor/insert', fornecedor.insert, name="fornecedor.insert"),
     path('fornecedor/edit/<id>\<nome>', fornecedor.edit, name="fornecedor.edit"),
     path('fornecedor/delete/<id>', fornecedor.delete, name="fornecedor.delete"),
+
+
     
+    path('funcionario', funcionario.home, name="funcionario.home"),
+    path('funcionario/insert', funcionario.insert, name="funcionario.insert"),
+    path('funcionario/edit/<id>\<nome>', funcionario.edit, name="funcionario.edit"),
+    path('funcionario/delete/<id>', funcionario.delete, name="funcionario.delete"),
+
+    path('usuario', usuario.home, name="usuario.home"),
+    path('usuario/insert', usuario.insert, name="usuario.insert"),
+    path('usuario/edit/<id>\<nome>', usuario.edit, name="usuario.edit"),
+    path('usuario/delete/<id>', usuario.delete, name="usuario.delete"),
+
+    path('endereco', endereco.home, name="endereco.home"),
+    path('endereco/insert', endereco.insert, name="endereco.insert"),
+    path('endereco/edit/<id>\<nome>', endereco.edit, name="endereco.edit"),
+    path('endereco/delete/<id>', endereco.delete, name="endereco.delete"),
+
+    path('pagamento', pagamento.home, name="pagamento.home"),
+    path('pagamento/insert', pagamento.insert, name="pagamento.insert"),
+    path('pagamento/edit/<id>\<nome>', pagamento.edit, name="pagamento.edit"),
+    path('pagamento/delete/<id>', pagamento.delete, name="pagamento.delete"),
+
+    path('compra', compra.home, name="compra.home"),
+    path('compra/insert', compra.insert, name="compra.insert"),
+    path('compra/edit/<id>\<nome>', compra.edit, name="compra.edit"),
+    path('compra/delete/<id>', compra.delete, name="compra.delete"),
+
+
     path('', home.home, name="home")
 ]

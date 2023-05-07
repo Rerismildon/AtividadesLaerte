@@ -29,3 +29,36 @@ class Fornecedor(models.Model):
     endereco = models.CharField(max_length=500)
     email = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20)
+
+
+
+class Funcionario(models.Model):
+    nome = models.CharField(max_length=30)
+    cargo = models.CharField(max_length=30)
+    email = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=20)
+
+class Usuario(models.Model):
+    nome = models.CharField(max_length=30)
+    email = models.CharField(max_length=100)
+    senha = models.CharField(max_length=50)
+
+class Endereco(models.Model):
+    rua = models.CharField(max_length=100)
+    numero = models.CharField(max_length=10)
+    complemento = models.CharField(max_length=100)
+    bairro = models.CharField(max_length=50)
+    cidade = models.CharField(max_length=50)
+    estado = models.CharField(max_length=50)
+    cep = models.CharField(max_length=10)
+
+class Pagamento(models.Model):
+    tipoPagamento = models.CharField(max_length=30)
+    valor = models.DecimalField(max_digits=8, decimal_places=2)
+    dataPagamento = models.DateField()
+
+class Compra(models.Model):
+    idProduto = models.IntegerField()
+    quantidade = models.IntegerField()
+    precoUnitario = models.DecimalField(max_digits=8, decimal_places=2)
+    dataCompra = models.DateField()
