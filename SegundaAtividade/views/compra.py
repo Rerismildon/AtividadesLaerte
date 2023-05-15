@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from meuapp.models import Compra
-from meuapp.forms import CompraForm
+from SegundaAtividade.models import Compra
+from SegundaAtividade.forms import CompraForm
 
 def home(request):
     compras = Compra.objects.all()       

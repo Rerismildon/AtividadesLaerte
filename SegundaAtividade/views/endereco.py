@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from meuapp.models import Endereco
-from meuapp.forms import EnderecoForm
+from SegundaAtividade.models import Endereco
+from SegundaAtividade.forms import EnderecoForm
 
 def home(request):
     enderecos = Endereco.objects.all()       

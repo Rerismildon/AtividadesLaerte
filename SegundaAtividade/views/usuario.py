@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from meuapp.models import Usuario
-from meuapp.forms import UsuarioForm
+from SegundaAtividade.models import Usuario
+from SegundaAtividade.forms import UsuarioForm
 
 def home(request):
     usuarios = Usuario.objects.all()       

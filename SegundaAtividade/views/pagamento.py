@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from meuapp.models import Pagamento
-from meuapp.forms import PagamentoForm
+from SegundaAtividade.models import Pagamento
+from SegundaAtividade.forms import PagamentoForm
 
 def home(request):
     pagamentos = Pagamento.objects.all()       
