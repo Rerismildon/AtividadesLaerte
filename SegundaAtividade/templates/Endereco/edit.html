@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+
+{% block 'header' %}
+Editar Endereço
+{% endblock %}
+{% block 'conteudo' %}
+
+<form method="POST" class="form container row g-3">
+    {% csrf_token %}
+    {% render_field form.id %}
+    <div class="col-md-6">
+        <p class="align-middle">Rua:</p>
+        {% render_field form.rua class="form-control" %}
+    </div>
+
+    <div class="col-md-2">
+        <p class="align-middle">Número:</p>
+        {% render_field form.numero class="form-control" %}
+    </div>  
+
+    <div class="col-md-4">
+        <p class="align-middle">Complemento:</p>
+        {% render_field form.complemento class="form-control" %}
+    </div>
+
+    <div class="col-md-3">
+        <p class="align-middle">Bairro:</p>
+        {% render_field form.bairro class="form-control" %}
+    </div>
+
+    <div class="col-md-3">
+        <p class="align-middle">Cidade:</p>
+        {% render_field form.cidade class="form-control" %}
+    </div> 
+
+    <div class="col-md-3">
+        <p class="align-middle">Estado:</p>
+        {% render_field form.estado class="form-control" %}
+    </div> 
+
+    <div class="col-md-3">
+        <p class="align-middle">CEP:</p>
+        {% render_field form.cep class="form-control" %}
+    </div> 
+
+    <div class="col-1">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="col-1">
+        <p></p>
+        <a href={% url 'endereco.home' %} class="btn btn-primary">Voltar</a>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+
+{% block 'header' %}
+Adicionar compra
+{% endblock %}
+{% block 'conteudo' %}
+
+<form method="POST" class="form container row g-3">
+    {% csrf_token %}
+    {% render_field form.id %}
+
+    <div class="col-md-4">
+        <p class="align-middle">Data da Compra:</p>
+        {% render_field form.dataCompra class="form-control" type="date" %}
+    </div>
+
+    <div class="col-md-4">
+        <p class="align-middle">ID do Produto:</p>
+        {% render_field form.idProduto class="form-control" %}
+    </div>
+
+    <div class="col-md-2">
+        <p class="align-middle">Quantidade:</p>
+        {% render_field form.quantidade class="form-control" %}
+    </div>
+
+    <div class="col-md-2">
+        <p class="align-middle">Preço Unitário:</p>
+        {% render_field form.precoUnitario class="form-control" %}
+    </div>
+
+    <div class="col-1">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="col-1">
+        <p></p>
+        <a href={% url 'compra.home' %} class="btn btn-primary">Voltar</a>
+    </div>
+</form>
+
+{% endblock %}
