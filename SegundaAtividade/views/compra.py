@@ -20,7 +20,7 @@ def insert(request):
         "form" : form,
     })
     
-def edit(request, id, nome):
+def edit(request, id):
     compraSelect = get_object_or_404(Compra, pk=id)
     form = CompraForm(request.POST or None, instance=compraSelect)
     
@@ -31,7 +31,7 @@ def edit(request, id, nome):
     
     return render(request, 'Compra/edit.html', {
         'form' : form,
-        'nome' : nome
+        'nome' : compraSelect.dataCompra
     })
     
 def delete(request, id):

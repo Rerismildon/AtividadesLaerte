@@ -24,9 +24,19 @@ Editar {{nome}}
         {% render_field form.estoque class="form-control" %}
     </div>  
 
-    <div class="col-xg-12">
+    <div class="col-sm-6">
         <p class="align-middle">Descrição:</p>
         {% render_field form.descricao class="form-control" %}
+    </div> 
+
+    <div class="col-sm-4">
+        <p class="align-middle">Fornecedor:</p>
+        {% render_field form.fornecedor class="form-control" %}
+    </div> 
+
+    <div class="col-sm-2">
+        <p class="align-middle">Categoria:</p>
+        {% render_field form.categoria class="form-control" %}
     </div> 
 
     <div class="col-1">

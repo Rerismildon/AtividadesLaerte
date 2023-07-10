@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+
+{% block 'header' %}
+Editar {{nome}}
+{% endblock %}
+{% block 'conteudo' %}
+
+<form method="POST" class="form container row g-3">
+    {% csrf_token %}
+    {% render_field form.id %}
+    <div class="col-md-6">
+        <p class="align-middle">Produto:</p>
+        {% render_field form.produto class="form-control" %}
+    </div>
+    <div class="col-md-6">
+        <p class="align-middle">Pedido:</p>
+        {% render_field form.pedido class="form-control" %}
+    </div>
+
+    <div class="col-1">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+    <div class="col-1">
+        <p></p>
+        <a href={% url 'itenspedidos.home' %} class="btn btn-primary">Voltar</a>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SegundaAtividade.views import cliente,produto,home,pedido,categoria, fornecedor,funcionario,compra,endereco,usuario,pagamento
+from SegundaAtividade.views import cliente,produto,home,pedido,categoria, fornecedor,funcionario,compra,endereco,usuario,pagamento,itenspedidos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clientes', cliente.home, name="cliente.home"),
     path('clientes/insert', cliente.insert, name="cliente.insert"),
-    path('clientes/edit/<id>\<nome>', cliente.edit, name="cliente.edit"),
+    path('clientes/edit/<id>', cliente.edit, name="cliente.edit"),
     path('clientes/delete/<id>', cliente.delete, name="cliente.delete"),
     
     path('produto', produto.home, name="produto.home"),
@@ -43,8 +43,6 @@ urlpatterns = [
     path('fornecedor/insert', fornecedor.insert, name="fornecedor.insert"),
     path('fornecedor/edit/<id>\<nome>', fornecedor.edit, name="fornecedor.edit"),
     path('fornecedor/delete/<id>', fornecedor.delete, name="fornecedor.delete"),
-
-
     
     path('funcionario', funcionario.home, name="funcionario.home"),
     path('funcionario/insert', funcionario.insert, name="funcionario.insert"),
@@ -58,7 +56,7 @@ urlpatterns = [
 
     path('endereco', endereco.home, name="endereco.home"),
     path('endereco/insert', endereco.insert, name="endereco.insert"),
-    path('endereco/edit/<id>\<nome>', endereco.edit, name="endereco.edit"),
+    path('endereco/edit/<id>', endereco.edit, name="endereco.edit"),
     path('endereco/delete/<id>', endereco.delete, name="endereco.delete"),
 
     path('pagamento', pagamento.home, name="pagamento.home"),
@@ -68,9 +66,13 @@ urlpatterns = [
 
     path('compra', compra.home, name="compra.home"),
     path('compra/insert', compra.insert, name="compra.insert"),
-    path('compra/edit/<id>\<nome>', compra.edit, name="compra.edit"),
+    path('compra/edit/<id>', compra.edit, name="compra.edit"),
     path('compra/delete/<id>', compra.delete, name="compra.delete"),
 
+    path('itenspedidos', itenspedidos.home, name="itenspedidos.home"),
+    path('itenspedidos/insert', itenspedidos.insert, name="itenspedidos.insert"),
+    path('itenspedidos/edit/<id>', itenspedidos.edit, name="itenspedidos.edit"),
+    path('itenspedidos/delete/<id>', itenspedidos.delete, name="itenspedidos.delete"),
 
     path('', home.home, name="home")
 ]

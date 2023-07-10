@@ -53,3 +53,8 @@ class CompraForm(ModelForm):
     class Meta:
         model = Compra
         fields = '__all__'
+        
+class ItensPedidosForm(ModelForm):
+    class Meta:
+        model = ItensPedidos
+        fields = '__all__'

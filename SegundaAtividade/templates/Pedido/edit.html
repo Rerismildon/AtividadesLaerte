@@ -29,9 +29,19 @@ Editar {{nome}}
         {% render_field form.status class="form-control" %}
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         <p class="align-middle">Valor Total:</p>
         {% render_field form.valor class="form-control" %}
+    </div> 
+
+    <div class="col-md-3">
+        <p class="align-middle">Cliente:</p>
+        {% render_field form.cliente class="form-control" %}
+    </div> 
+
+    <div class="col-md-3">
+        <p class="align-middle">Funcionario:</p>
+        {% render_field form.funcionario class="form-control" %}
     </div> 
 
     <div class="col-1">

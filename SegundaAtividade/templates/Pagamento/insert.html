@@ -9,18 +9,23 @@ Adicionar pagamento
 <form method="POST" class="form container row g-3">
     {% csrf_token %}
     {% render_field form.id %}
+    
+    <div class="col-md-4">
+        <p class="align-middle">Pedido:</p>
+        {% render_field form.pedido class="form-control" %}
+    </div>
 
     <div class="col-md-4">
         <p class="align-middle">Tipo de Pagamento:</p>
         {% render_field form.tipoPagamento class="form-control" %}
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
         <p class="align-middle">Valor:</p>
         {% render_field form.valor class="form-control" %}
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
         <p class="align-middle">Data de Pagamento:</p>
         {% render_field form.dataPagamento class="form-control" type="date" %}
     </div>

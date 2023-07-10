@@ -9,8 +9,12 @@ Adicionar endereço
 <form method="POST" class="form container row g-3">
     {% csrf_token %}
     {% render_field form.id %}
+    <div class="col-md-3">
+        <p class="align-middle">Dono:</p>
+        {% render_field form.cliente class="form-control" %}
+    </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         <p class="align-middle">Rua:</p>
         {% render_field form.rua class="form-control" %}
     </div>

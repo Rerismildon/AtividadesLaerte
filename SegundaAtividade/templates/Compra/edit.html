@@ -9,7 +9,13 @@ Editar Compra
 <form method="POST" class="form container row g-3">
     {% csrf_token %}
     {% render_field form.ID %}
-    <div class="col-md-4">
+
+    <div class="col-md-2">
+        <p class="align-middle">Comprador:</p>
+        {% render_field form.cliente class="form-control" type="date" %}
+    </div>
+
+    <div class="col-md-2">
         <p class="align-middle">Data da Compra:</p>
         {% render_field form.dataCompra class="form-control" type="date" %}
     </div>

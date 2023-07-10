@@ -20,7 +20,7 @@ def insert(request):
         "form" : form,
     })
     
-def edit(request, id, nome):
+def edit(request, id):
     clienteSelect = get_object_or_404(Cliente, pk=id)
     form = ClienteForm(request.POST or None, instance=clienteSelect)
     
@@ -31,7 +31,7 @@ def edit(request, id, nome):
     
     return render(request, 'Cliente/edit.html', {
         'form' : form,
-        'nome' : nome
+        'nome' : clienteSelect.nome
     })
     
 def delete(request, id):

@@ -20,7 +20,7 @@ def insert(request):
         "form" : form,
     })
     
-def edit(request, id, nome):
+def edit(request, id):
     enderecoSelect = get_object_or_404(Endereco, pk=id)
     form = EnderecoForm(request.POST or None, instance=enderecoSelect)
     
@@ -31,7 +31,7 @@ def edit(request, id, nome):
     
     return render(request, 'Endereco/edit.html', {
         'form' : form,
-        'nome' : nome
+        'nome' : enderecoSelect.rua
     })
     
 def delete(request, id):

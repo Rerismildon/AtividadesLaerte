@@ -31,7 +31,7 @@ def edit(request, id):
     
     return render(request, 'Pedido/edit.html', {
         'form' : form,
-        'nome' : id
+        'nome' : pedidoSelect.dataPedido
     })
     
 def delete(request, id):
