@@ -1,0 +1,111 @@
+#Settings
+
+Colocar em database:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SegundaAtividade',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '',
+    }
+}
+
+Colocar em Installed_Apps = [
+    'nomeDosite'
+]
+
+==========================================
+#Models
+
+from django.db import models
+
+class Classe1(models.Model):
+    atributo = models.IntegerField()
+    atributo = models.DecimalField(decimal_places=2, max_digits=10)
+    atributo = models.CharField(max_length=30)
+    atributo = models.DateField()
+    atributo = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return self.nome
+
+==========================================
+#Forms
+
+from projeto.models import *
+from django.forms import ModelForm
+
+class ClasseForm(ModelForm):
+    class Meta:
+        model = Classe1
+        fields = '__all__'
+
+==========================================
+#urls
+
+form (pasta views) import (arquivo view)
+
+path('classe/edit/<id>', classe.edit, name="classe.edit")
+
+==========================================
+#Views
+
+from django.shortcuts import redirect, render, get_object_or_404
+from projeto.models import Classe1
+from projeto.forms import ClasseForm
+
+def home(request):
+    Classe1 = Classe1.objects.all()        #Retorn todos os objetos
+
+    return render(request, 'index.html',{
+        "listaClasse1" : Classe1,          #Retornar os objetos em forma de lista.
+    })
+
+#Retornar os objetos em um form
+
+def inserir(request):
+    form = Classe1Form(request.POSt or None)      #None caso nao receba nada.
+
+    if form.is_valid():                           #Verificar se e valido para salvar.
+        form.save()
+        return redirect('classe.index')
+
+    return render(request, 'form.html', {
+        "form" : form                             #Return o form
+    })
+
+def edit(request, id):
+    Objeto = get_object_or_404(Classe1, pk=id)   #Pegando o objeto com o id que foi recebido
+    form = Classe1FOrm(request.POSt or None, instance=Objeto) #Form preenchido com o objeto para editar
+
+    if form.is_valid():
+        form.save()
+        return redirect('classe.index')
+
+    return render(request, 'form.html', {
+        "form" : form
+    })
+
+def delete(request, id):
+    Objeto = get_object_or_404(Classe1, pk=id)
+    Objeto.delete()
+
+    return redirect(home)
+
+==========================================
+#Templates
+
+{% load widget_tweaks %}
+{% csrf_token %}
+
+{% extends 'index.html' %}
+
+{% block 'conteudo' %}
+{% endblock %}
+
+<form method="POST">
+{% render_field form.id %}
+{% url 'classe.home' %}
