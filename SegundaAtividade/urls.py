@@ -51,7 +51,7 @@ urlpatterns = [
 
     path('usuario', usuario.home, name="usuario.home"),
     path('usuario/insert', usuario.insert, name="usuario.insert"),
-    path('usuario/edit/<id>\<nome>', usuario.edit, name="usuario.edit"),
+    path('usuario/edit/<id>', usuario.edit, name="usuario.edit"),
     path('usuario/delete/<id>', usuario.delete, name="usuario.delete"),
 
     path('endereco', endereco.home, name="endereco.home"),

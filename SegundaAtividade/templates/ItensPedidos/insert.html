@@ -12,10 +12,12 @@ Adicionar produto
     <div class="col-md-6">
         <p class="align-middle">Produto:</p>
         {% render_field form.produto class="form-control" %}
+        {% if form.produto.errors %}<small style="color: blue;">{{ form.produto.errors.0 }}</small>{% endif %}
     </div>
     <div class="col-md-6">
         <p class="align-middle">Pedido:</p>
         {% render_field form.pedido class="form-control" %}
+        {% if form.pedido.errors %}<small style="color: blue;">{{ form.pedido.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

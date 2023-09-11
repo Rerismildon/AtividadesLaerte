@@ -12,31 +12,37 @@ Adicionar produto
     <div class="col-md-6">
         <p class="align-middle">Nome:</p>
         {% render_field form.nome class="form-control" %}
+        {% if form.nome.errors %}<small style="color: blue;">{{ form.nome.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-sm-3">
         <p class="align-middle">Preço:</p>
         {% render_field form.preco class="form-control" %}
+        {% if form.preco.errors %}<small style="color: blue;">{{ form.preco.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-sm-3">
         <p class="align-middle">Estoque:</p>
         {% render_field form.estoque class="form-control" %}
+        {% if form.estoque.errors %}<small style="color: blue;">{{ form.estoque.errors.0 }}</small>{% endif %}
     </div>  
 
     <div class="col-sm-6">
         <p class="align-middle">Descrição:</p>
         {% render_field form.descricao class="form-control" %}
+        {% if form.descricao.errors %}<small style="color: blue;">{{ form.descricao.errors.0 }}</small>{% endif %}
     </div> 
 
     <div class="col-sm-4">
         <p class="align-middle">Fornecedor:</p>
         {% render_field form.fornecedor class="form-control" %}
+        {% if form.fornecedor.errors %}<small style="color: blue;">{{ form.fornecedor.errors.0 }}</small>{% endif %}
     </div> 
 
     <div class="col-sm-2">
         <p class="align-middle">Categoria:</p>
         {% render_field form.categoria class="form-control" %}
+        {% if form.categoria.errors %}<small style="color: blue;">{{ form.categoria.errors.0 }}</small>{% endif %}
     </div> 
 
     <div class="col-1">

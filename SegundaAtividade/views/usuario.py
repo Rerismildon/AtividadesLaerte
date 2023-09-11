@@ -13,6 +13,7 @@ def insert(request):
     form = UsuarioForm(request.POST or None)
     
     if form.is_valid():
+        print("a")
         form.save()
         return redirect('usuario.home')
     
@@ -20,7 +21,7 @@ def insert(request):
         "form" : form,
     })
     
-def edit(request, id, nome):
+def edit(request, id):
     usuarioSelect = get_object_or_404(Usuario, pk=id)
     form = UsuarioForm(request.POST or None, instance=usuarioSelect)
     
@@ -31,7 +32,7 @@ def edit(request, id, nome):
     
     return render(request, 'Usuario/edit.html', {
         'form' : form,
-        'nome' : nome
+        'nome' : usuarioSelect.nome
     })
     
 def delete(request, id):

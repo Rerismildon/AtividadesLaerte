@@ -12,27 +12,32 @@ Adicionar compra
 
     <div class="col-md-2">
         <p class="align-middle">Comprador:</p>
-        {% render_field form.cliente class="form-control" type="date" %}
+        {% render_field form.cliente class="form-control"%}
+        {% if form.cliente.errors %}<small style="color: blue;">{{ form.cliente.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Data da Compra:</p>
         {% render_field form.dataCompra class="form-control" type="date" %}
+        {% if form.dataCompra.errors %}<small style="color: blue;">{{ form.dataCompra.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-4">
         <p class="align-middle">ID do Produto:</p>
         {% render_field form.idProduto class="form-control" %}
+        {% if form.idProduto.errors %}<small style="color: blue;">{{ form.idProduto.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Quantidade:</p>
         {% render_field form.quantidade class="form-control" %}
+        {% if form.quantidade.errors %}<small style="color: blue;">{{ form.quantidade.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Preço Unitário:</p>
         {% render_field form.precoUnitario class="form-control" %}
+        {% if form.precoUnitario.errors %}<small style="color: blue;">{{ form.precoUnitario.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

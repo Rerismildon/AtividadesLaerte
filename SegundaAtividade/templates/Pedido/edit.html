@@ -12,38 +12,44 @@ Editar {{nome}}
     <div class="col-md-4">
         <p class="align-middle">Data Pedido:</p>
         {% render_field form.dataPedido class="form-control" type="date" %}
+        {% if form.dataPedido.errors %}<small style="color: blue;">{{ form.dataPedido.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-4">
         <p class="align-middle">Data Prevista Entrega:</p>
         {% render_field form.dataEntregaPrevista class="form-control" type="date" %}
+        {% if form.dataEntregaPrevista.errors %}<small style="color: blue;">{{ form.dataEntregaPrevista.errors.0 }}</small>{% endif %}
     </div>  
 
     <div class="col-md-4">
         <p class="align-middle">Data Entregue:</p>
         {% render_field form.dataEntregaReal class="form-control" type="date" %}
+        {% if form.dataEntregaReal.errors %}<small style="color: blue;">{{ form.dataEntregaReal.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-6">
         <p class="align-middle">Status:</p>
         {% render_field form.status class="form-control" %}
+        {% if form.status.errors %}<small style="color: blue;">{{ form.status.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Valor Total:</p>
         {% render_field form.valor class="form-control" %}
+        {% if form.valor.errors %}<small style="color: blue;">{{ form.valor.errors.0 }}</small>{% endif %}
     </div> 
 
     <div class="col-md-3">
         <p class="align-middle">Cliente:</p>
         {% render_field form.cliente class="form-control" %}
+        {% if form.cliente.errors %}<small style="color: blue;">{{ form.cliente.errors.0 }}</small>{% endif %}
     </div> 
 
     <div class="col-md-3">
         <p class="align-middle">Funcionario:</p>
         {% render_field form.funcionario class="form-control" %}
+        {% if form.funcionario.errors %}<small style="color: blue;">{{ form.funcionario.errors.0 }}</small>{% endif %}
     </div> 
-
     <div class="col-1">
         <p></p>
         <button type="submit" class="btn btn-primary">Salvar</button>

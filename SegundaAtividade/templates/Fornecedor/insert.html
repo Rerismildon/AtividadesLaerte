@@ -12,21 +12,25 @@ Adicionar fornecedor
     <div class="col-md-6">
         <p class="align-middle">Nome:</p>
         {% render_field form.nome class="form-control" %}
+        {% if form.nome.errors %}<small style="color: blue;">{{ form.nome.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-6">
         <p class="align-middle">Endereço:</p>
         {% render_field form.endereco class="form-control" %}
+        {% if form.endereco.errors %}<small style="color: blue;">{{ form.endereco.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-6">
         <p class="align-middle" style="margin-bottom:">E-mail:</p>
         {% render_field form.email class="form-control" %}
+        {% if form.email.errors %}<small style="color: blue;">{{ form.email.errors.0 }}</small>{% endif %}
     </div>  
 
     <div class="col-md-6">
         <p class="align-middle">Telefone:</p>
         {% render_field form.telefone class="form-control" %}
+        {% if form.telefone.errors %}<small style="color: blue;">{{ form.telefone.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

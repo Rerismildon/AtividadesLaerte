@@ -13,21 +13,25 @@ Editar Pagamento
     <div class="col-md-4">
         <p class="align-middle">Pedido:</p>
         {% render_field form.pedido class="form-control" %}
+        {% if form.pedido.errors %}<small style="color: blue;">{{ form.pedido.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-4">
         <p class="align-middle">Tipo de Pagamento:</p>
         {% render_field form.tipoPagamento class="form-control" %}
+        {% if form.tipoPagamento.errors %}<small style="color: blue;">{{ form.tipoPagamento.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Valor:</p>
         {% render_field form.valor class="form-control" %}
-    </div>  
+        {% if form.valor.errors %}<small style="color: blue;">{{ form.valor.errors.0 }}</small>{% endif %}
+    </div>
 
     <div class="col-md-2">
         <p class="align-middle">Data de Pagamento:</p>
         {% render_field form.dataPagamento class="form-control" type="date" %}
+        {% if form.dataPagamento.errors %}<small style="color: blue;">{{ form.dataPagamento.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

@@ -12,11 +12,13 @@ Adicionar categoria
     <div class="col-md-6">
         <p class="align-middle">Nome:</p>
         {% render_field form.nome class="form-control" %}
+        {% if form.nome.errors %}<small style="color: blue;">{{ form.nome.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-6">
         <p class="align-middle">Descrição:</p>
         {% render_field form.descricao class="form-control" %}
+        {% if form.descricao.errors %}<small style="color: blue;">{{ form.descricao.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

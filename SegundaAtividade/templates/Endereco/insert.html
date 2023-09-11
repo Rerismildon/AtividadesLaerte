@@ -12,41 +12,49 @@ Adicionar endereço
     <div class="col-md-3">
         <p class="align-middle">Dono:</p>
         {% render_field form.cliente class="form-control" %}
+        {% if form.cliente.errors %}<small style="color: blue;">{{ form.cliente.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Rua:</p>
         {% render_field form.rua class="form-control" %}
+        {% if form.rua.errors %}<small style="color: blue;">{{ form.rua.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Número:</p>
         {% render_field form.numero class="form-control" %}
+        {% if form.numero.errors %}<small style="color: blue;">{{ form.numero.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-4">
         <p class="align-middle">Complemento:</p>
         {% render_field form.complemento class="form-control" %}
+        {% if form.complemento.errors %}<small style="color: blue;">{{ form.complemento.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Bairro:</p>
         {% render_field form.bairro class="form-control" %}
+        {% if form.bairro.errors %}<small style="color: blue;">{{ form.bairro.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Cidade:</p>
         {% render_field form.cidade class="form-control" %}
+        {% if form.cidade.errors %}<small style="color: blue;">{{ form.cidade.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Estado:</p>
         {% render_field form.estado class="form-control" %}
+        {% if form.estado.errors %}<small style="color: blue;">{{ form.estado.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">CEP:</p>
         {% render_field form.cep class="form-control" %}
+        {% if form.cep.errors %}<small style="color: blue;">{{ form.cep.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">

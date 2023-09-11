@@ -12,21 +12,25 @@ Editar {{nome}}
     <div class="col-md-4">
         <p class="align-middle">Nome:</p>
         {% render_field form.nome class="form-control" %}
+        {% if form.nome.errors %}<small style="color: blue;">{{ form.nome.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-3">
         <p class="align-middle">Cargo:</p>
         {% render_field form.cargo class="form-control" %}
+        {% if form.cargo.errors %}<small style="color: blue;">{{ form.cargo.errors.0 }}</small>{% endif %}
     </div>  
 
     <div class="col-md-3">
         <p class="align-middle">Email:</p>
         {% render_field form.email class="form-control" %}
+        {% if form.email.errors %}<small style="color: blue;">{{ form.email.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-md-2">
         <p class="align-middle">Telefone:</p>
         {% render_field form.telefone class="form-control" %}
+        {% if form.telefone.errors %}<small style="color: blue;">{{ form.telefone.errors.0 }}</small>{% endif %}
     </div>
 
     <div class="col-1">
